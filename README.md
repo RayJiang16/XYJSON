@@ -30,7 +30,7 @@ github "RayJiang16/XYJSON"
 
 ## Usage
 
-####JSONParameters
+### JSONParameters
 
 Struct or Class conform to `JSONParameters`, you can use `requestParameters` for free.
 
@@ -47,7 +47,7 @@ print(employee.requestParameters)
 
 
 
-#### JSONProperty
+### JSONProperty
 
 The property name in your model (`name` in this case), might not same name in request. You can use `@JSONProperty` to rename that.
 
@@ -65,7 +65,7 @@ print(employee.requestParameters)
 
 
 
-#### JSONIgnore
+### JSONIgnore
 
 You can use `@JSONIgnore` to ignore the property that you don't want it in request parameters.
 
@@ -85,9 +85,9 @@ print(employee.requestParameters)
 
 
 
-#### JSONValue
+### JSONValue
 
-##### Enum
+#### Enum
 
 If you want to use enum in your model, you need to make the enum conform to `JSONValue`.
 
@@ -106,7 +106,7 @@ print(employee.requestParameters)
 // {"name":"Tom", "sex":1}
 ```
 
-##### Custom model
+#### Custom model
 
 if you want to use another struct or class in your model, you need to make the model conform to `JSONValue` and implement `var jsonValue: JSONValue`.
 

@@ -29,7 +29,7 @@ github "RayJiang16/XYJSON"
 
 ## 使用
 
-####JSONParameters
+### JSONParameters
 
 当 Struct 或 Class 遵守 `JSONParameters` 协议之后，就能用 `requestParameters` 属性获取 JSON 字典了，默认情况下会把 Model 中所有的字段都取出来。
 
@@ -46,7 +46,7 @@ print(employee.requestParameters)
 
 
 
-#### JSONProperty
+### JSONProperty
 
 实际开发中，Model 中的字段名可能会和接口中的字段名不一样。这个时候就要使用 `@JSONProperty` 来重命名了，重命名之后项目中还是用 `name`， `requestParameters` 获取到的字段就会变成 `employee_name` 了。
 
@@ -64,7 +64,7 @@ print(employee.requestParameters)
 
 
 
-#### JSONIgnore
+### JSONIgnore
 
 还有一个很常见的情况，这个 Model 可能增加了一些仅在本地使用的属性，不需要出现在接口中。这个时候就可以用 `@JSONIgnore` 把这个字段过滤掉。
 
@@ -84,9 +84,9 @@ print(employee.requestParameters)
 
 
 
-#### JSONValue
+### JSONValue
 
-##### Enum
+#### Enum
 
 如果 Model 中使用了枚举，并且想要把枚举的 `rawValue` 传过去，那么只需要让枚举遵守 `JSONValue` 协议就可以了。
 
@@ -105,7 +105,7 @@ print(employee.requestParameters)
 // {"name":"Tom", "sex":1}
 ```
 
-##### Custom model
+#### Custom model
 
 如果 Model 中嵌套了另一个 Model，需要让另一个 Model 遵守 `JSONValue` 协议，并实现 `var jsonValue: JSONValue` 属性，这个属性要求返回基本数据类型，数组或字典。
 
@@ -165,4 +165,4 @@ struct Employee: JSONParameters {
 
 ## 协议
 
-**XYJSON** 基于 MIT 协议进行分发和使用，更多信息参见[协议文件](https://github.com/RayJiang16/XYColor/blob/master/LICENSE)。
+**XYJSON** 基于 MIT 协议进行分发和使用，更多信息参见[协议文件](LICENSE)。
