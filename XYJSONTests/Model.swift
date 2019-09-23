@@ -41,7 +41,7 @@ struct Test: JSONValue, JSONParameters {
     var t2: String = "t2"
     
     var jsonValue: JSONValue {
-        // 可以返回基本数据类型 | 数组 | 字典
+        // You can return Int, Double, Array, Dictionary...
         return requestParameters
     }
 }

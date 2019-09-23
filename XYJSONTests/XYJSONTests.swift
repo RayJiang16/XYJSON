@@ -15,7 +15,7 @@ class XYJSONTests: XCTestCase {
         let employee = Employee(name: "Tom", sex: .boy, age: 21, salary: 8000)
         let parameters = employee.requestParameters
         print(parameters)
-        // ["employee_name": "Tom", "sex": 1, "age": 21, "salary": 8000.0, "test": ["t1": 1, "t2": "t2"]]
+        // {"employee_name": "Tom", "sex": 1, "age": 21, "salary": 8000.0, "test": {"t1": 1, "t2": "t2"}}
     }
 
 }
