@@ -19,11 +19,7 @@ public struct JSONProperty<T: JSONValue>: JSONPropertyProtocol {
     public var _value: T? = nil
     public var value: Any {
         guard let value = _value?.jsonValue else {
-            #if DEBUG
-            fatalError("未初始化对象:\(name)")
-            #else
-            return ""
-            #endif
+            fatalError("Uninitialized object: \(name)")
         }
         return value
     }
@@ -40,11 +36,7 @@ public struct JSONProperty<T: JSONValue>: JSONPropertyProtocol {
     public var wrappedValue: T {
         get {
             guard let _value = _value else {
-                #if DEBUG
-                fatalError("未初始化对象:\(name)")
-                #else
-                return ""
-                #endif
+                fatalError("Uninitialized object: \(name)")
             }
             return _value
         } set {

@@ -27,11 +27,7 @@ public struct JSONIgnore<T: JSONValue>: JSONIgnoreProtocol {
     public var wrappedValue: T {
         get {
             guard let value = value else {
-                #if DEBUG
-                fatalError("未初始化对象")
-                #else
-                return ""
-                #endif
+                fatalError("Uninitialized object")
             }
             return value
         } set {
