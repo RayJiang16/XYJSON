@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'XYJSON'
-  s.version          = '1.0.0'
+  s.version          = '1.1.0'
   s.summary          = 'An easy way to create parameters of request.'
 
   s.homepage         = 'https://github.com/RayJiang16/XYJSON'
