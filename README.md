@@ -67,7 +67,7 @@ There has an other situation is some API might use int property to represent boo
 
 eg. `{"is_vip":0} or {"is_vip":1}` 
 
-In the code, you should use bool instead of int. You can use `convert` to resolv this problem.
+In the code, you should use bool instead of int. You can use `convert` to resolve the problem.
 
 ```swift
 struct TestConvert: JSONParameters {
