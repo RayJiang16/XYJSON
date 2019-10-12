@@ -12,6 +12,12 @@ public protocol JSONValue {
     var jsonValue: JSONValue { get }
 }
 
+extension Bool: JSONValue {
+    public var jsonValue: JSONValue {
+        return self
+    }
+}
+
 extension Int: JSONValue {
     public var jsonValue: JSONValue {
         return self

@@ -8,13 +8,15 @@
 
 import Foundation
 
-public protocol JSONIgnoreProtocol {
+protocol JSONIgnoreProtocol {
     
 }
 
 @propertyWrapper
 public struct JSONIgnore<T: JSONValue>: JSONIgnoreProtocol {
-    public var value: T? = nil
+    
+    /// Value
+    internal var value: T? = nil
     
     public init() {
         

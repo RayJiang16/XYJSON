@@ -8,15 +8,17 @@
 
 import Foundation
 
-public protocol JSONPropertyProtocol {
+protocol JSONPropertyProtocol {
     var name: String { get }
     var value: Any { get }
 }
 
 @propertyWrapper
-public struct JSONProperty<T: JSONValue>: JSONPropertyProtocol {
+public struct JSONProperty<T: JSONValue>: JSONPropertyProtocol, JSONPropertyConvertProtocol {
+    
+    /// Key name
     public var name: String
-    public var _value: T? = nil
+    /// Value
     public var value: Any {
         guard let value = _value?.jsonValue else {
             fatalError("Uninitialized object: \(name)")
@@ -24,12 +26,23 @@ public struct JSONProperty<T: JSONValue>: JSONPropertyProtocol {
         return value
     }
     
-    public init(name: String) {
+    internal var _value: T? = nil
+    internal var convert: ((Any) -> Any)? = nil
+    
+    public init(name: String = "", convert: ((T) -> Any)? = nil) {
         self.name = name
+        if let convert = convert {
+            self.convert = { obj in
+                if let obj = obj as? T {
+                    return convert(obj)
+                }
+                return obj
+            }
+        }
     }
     
-    public init(wrappedValue initialValue: T, name: String) {
-        self.name = name
+    public init(wrappedValue initialValue: T, name: String = "", convert: ((T) -> Any)? = nil) {
+        self.init(name: name, convert: convert)
         wrappedValue = initialValue
     }
     

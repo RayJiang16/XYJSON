@@ -18,7 +18,20 @@ extension JSONParameters {
         let mirror = Mirror(reflecting: self)
         for child in mirror.children {
             if let obj = child.value as? JSONPropertyProtocol {
-                parameters[obj.name] = obj.value
+                let name: String
+                if obj.name.isEmpty {
+                    var label = (child.label ?? "")
+                    label.remove(at: label.startIndex)
+                    name = label
+                } else {
+                    name = obj.name
+                }
+                
+                if let convertObj = child.value as? JSONPropertyConvertProtocol, let convert = convertObj.convert {
+                    parameters[name] = convert(obj.value)
+                } else {
+                    parameters[name] = obj.value
+                }
             } else if child.value is JSONIgnoreProtocol {
                 
             } else {

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A548BAD8232AFABE00D22E0C /* XYJSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A548BAD7232AFABE00D22E0C /* XYJSONTests.swift */; };
 		A548BADA232AFABE00D22E0C /* XYJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A59D238D232A3AA00066156A /* XYJSON.framework */; };
+		A599FBA52351AB4A008376EB /* JSONPropertyConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599FBA42351AB4A008376EB /* JSONPropertyConvert.swift */; };
 		A59D2392232A3AA00066156A /* XYJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = A59D2390232A3AA00066156A /* XYJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A59D239A232A3B4A0066156A /* JSONProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59D2399232A3B4A0066156A /* JSONProperty.swift */; };
 		A59D239C232A3E6D0066156A /* JSONValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59D239B232A3E6D0066156A /* JSONValue.swift */; };
@@ -31,6 +32,7 @@
 		A548BAD5232AFABE00D22E0C /* XYJSONTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XYJSONTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A548BAD7232AFABE00D22E0C /* XYJSONTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYJSONTests.swift; sourceTree = "<group>"; };
 		A548BAD9232AFABE00D22E0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A599FBA42351AB4A008376EB /* JSONPropertyConvert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONPropertyConvert.swift; sourceTree = "<group>"; };
 		A59D238D232A3AA00066156A /* XYJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XYJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A59D2390232A3AA00066156A /* XYJSON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYJSON.h; sourceTree = "<group>"; };
 		A59D2391232A3AA00066156A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				A59D2399232A3B4A0066156A /* JSONProperty.swift */,
 				A59D239F232A3F700066156A /* JSONIgnore.swift */,
+				A599FBA42351AB4A008376EB /* JSONPropertyConvert.swift */,
 				A59D239B232A3E6D0066156A /* JSONValue.swift */,
 				A59D23A3232A46150066156A /* JSONParameters.swift */,
 			);
@@ -228,6 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A599FBA52351AB4A008376EB /* JSONPropertyConvert.swift in Sources */,
 				A59D239A232A3B4A0066156A /* JSONProperty.swift in Sources */,
 				A59D23A4232A46150066156A /* JSONParameters.swift in Sources */,
 				A59D23A0232A3F700066156A /* JSONIgnore.swift in Sources */,
