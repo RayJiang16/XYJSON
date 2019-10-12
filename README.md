@@ -63,6 +63,37 @@ print(employee.requestParameters)
 // {"employee_name":"Tom", "age":21}
 ```
 
+There has an other situation is some API might use int property to represent bool in the request.
+
+eg. `{"is_vip":0} or {"is_vip":1}` 
+
+In the code, you should use bool instead of int. You can use `convert` to resolv this problem.
+
+```swift
+struct TestConvert: JSONParameters {
+    @JSONProperty(convert: convertIntToString)
+    var id: Int
+    @JSONProperty(name: "is_vip", convert: convertBoolToInt)
+    var isVip: Bool
+    @JSONProperty(convert: { obj in
+        return obj ? "Yes" : "No"
+    })
+    var custom: Bool
+}
+
+let obj = TestConvert(id: 233, isVip: true, custom: false)
+print(obj.requestParameters)
+// {"id": "233", "is_vip": 1, "custom": "No"}
+```
+
+`convert` is a closure: `(T) -> Any`. T is type of property. `XYJSON` offers some common `convert`.
+
+- convertBoolToInt
+- convertBoolToIntString
+- convertIntToString
+- convertStringToInt
+- convertDoubleToString
+
 
 
 ### JSONIgnore

@@ -22,6 +22,6 @@ class XYJSONTests: XCTestCase {
         let obj = TestConvert(id: 233, isVip: true, custom: false)
         let parameters = obj.requestParameters
         print(parameters)
-        // ["id": "233", "is_vip": 1, "custom": "No"]
+        // {"id": "233", "is_vip": 1, "custom": "No"}
     }
 }

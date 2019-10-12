@@ -62,6 +62,35 @@ print(employee.requestParameters)
 // {"employee_name":"Tom", "age":21}
 ```
 
+另外还有一种情况，一个 bool 类型的字段，但是在接口传输的时候用 int 来表示，这个时候就要使用 `@JSONProperty` 中的 convert 属性了。
+
+```swift
+struct TestConvert: JSONParameters {
+    @JSONProperty(convert: convertIntToString)
+    var id: Int
+    @JSONProperty(name: "is_vip", convert: convertBoolToInt)
+    var isVip: Bool
+    @JSONProperty(convert: { obj in
+        return obj ? "Yes" : "No"
+    })
+    var custom: Bool
+}
+
+let obj = TestConvert(id: 233, isVip: true, custom: false)
+print(obj.requestParameters)
+// {"id": "233", "is_vip": 1, "custom": "No"}
+```
+
+convert 是一个闭包 `(T) -> Any` T 是属性的类型，`XYJSON` 提供了几个常见的 convert：
+
+- convertBoolToInt
+- convertBoolToIntString
+- convertIntToString
+- convertStringToInt
+- convertDoubleToString
+
+如果默认的 convert 不满足你的需求，可以自定义 convert。
+
 
 
 ### JSONIgnore
