@@ -17,5 +17,11 @@ class XYJSONTests: XCTestCase {
         print(parameters)
         // {"employee_name": "Tom", "sex": 1, "age": 21, "salary": 8000.0, "test": {"t1": 1, "t2": "t2"}}
     }
-
+    
+    func testConvert() {
+        let obj = TestConvert(id: 233, isVip: true, custom: false)
+        let parameters = obj.requestParameters
+        print(parameters)
+        // ["id": "233", "is_vip": 1, "custom": "No"]
+    }
 }

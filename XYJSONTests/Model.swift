@@ -45,3 +45,22 @@ struct Test: JSONValue, JSONParameters {
         return requestParameters
     }
 }
+
+struct TestConvert: JSONParameters {
+    @JSONProperty(convert: convertIntToString)
+    var id: Int
+    
+    @JSONProperty(name: "is_vip", convert: convertBoolToInt)
+    var isVip: Bool
+    
+    @JSONProperty(convert: { obj in
+        return obj ? "Yes" : "No"
+    })
+    var custom: Bool
+    
+    init(id: Int, isVip: Bool, custom: Bool) {
+        self.id = id
+        self.isVip = isVip
+        self.custom = custom
+    }
+}
