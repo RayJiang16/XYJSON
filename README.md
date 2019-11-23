@@ -1,5 +1,11 @@
 # XYJSON
 
+[![GitHub Actions](https://github.com/RayJiang16/XYJSON/workflows/build/badge.svg?branch=master)](https://github.com/RayJiang16/XYJSON/actions?query=workflow%3Abuild)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/XYJSON.svg)](https://cocoapods.org/pods/XYJSON)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Platform](https://img.shields.io/cocoapods/p/XYJSON.svg?style=flat)](./)
+[![License](https://img.shields.io/cocoapods/l/XYJSON.svg?style=flat)](./LICENSE)
+
 An easy way to create parameters of request.
 
 [中文介绍](README_CN.md)
