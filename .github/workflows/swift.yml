@@ -14,7 +14,5 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: BuildSwift
-      run: xcodebuild -project XYColor.xcodeproj -scheme Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
-    - name: BuildObjectiveC
-      run: xcodebuild -project XYColor.xcodeproj -scheme Example-OC -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+    - name: Build
+      run: xcodebuild -project XYJSON.xcodeproj -scheme XYJSON -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
